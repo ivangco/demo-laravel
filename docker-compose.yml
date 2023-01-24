@@ -1,0 +1,15 @@
+
+version: '3.8'
+
+services:
+  apimont:
+    image: phplaravel:latest
+
+    volumes:
+      - type: bind
+        source: ./
+        target: /app/
+    ports: 
+      - "8881:3000"
+      - "8888:8000"
+      - "8883:80"

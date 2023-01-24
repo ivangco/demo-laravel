@@ -16,3 +16,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/test', function () {
+    return 'amongus ඞ';
+});
+
+Route::get('/testarr', function () {
+    return ['cero'=>'$amongus ඞ',
+    'uno'=>'$amongus ඞ',
+    'dos'=>'$amongus ඞ',
+    'tres'=>'$amongus ඞ',
+    'cuatro'=>'$amongus ඞ',
+    'cinco'=>'$amongus ඞ',
+    'seis'=>'$amongus ඞ',
+    'siete'=>'$amongus ඞ',
+    'ocho'=>'$amongus ඞ',
+    'nueve'=>'$amongus ඞ',];
+});
+
