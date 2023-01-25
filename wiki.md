@@ -14,3 +14,15 @@ docker run --rm --interactive --tty   --volume <path>:/app composer create-proje
 ``` bash
 docker run --rm --interactive --tty   --volume <path>:/app composer create-project laravel/laravel demo 
 ```
+
+# Buenas practicas
+
+- No tocar codigo creado por artisan
+- Encaso de añadir campo crear una nueva migracion 
+
+
+# Componentes de artizan utilizados
+
+- Make (para migraciones del esquema de trabajo en la base de datos)
+- Eloquent (para ocm)
+- tincker (para pruebas)
