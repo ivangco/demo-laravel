@@ -4,7 +4,24 @@ version: '3.8'
 services:
   apimont:
     image: phplaravel:latest
-
+    environment:
+          # ALLOW_EMPTY_PASSWORD is recommended only for development.
+          # - LARAVEL_PORT_NUMBER=
+          - LARAVEL_SKIP_COMPOSER_UPDATE=no
+          - LARAVEL_SKIP_DATABASE=no
+          - LARAVEL_DATABASE_TYPE=sqlsrv
+          - LARAVEL_DATABASE_HOST=sqldata
+          - LARAVEL_DATABASE_PORT_NUMBER=1433
+          - LARAVEL_DATABASE_NAME=master
+          - LARAVEL_DATABASE_USER=sa
+          - LARAVEL_DATABASE_PASSWORD=Pass@word
+          # - SKIP_COMPOSER_UPDATE=sa
+          # - DB_CONNECTION=sqlsrv
+          # - DB_HOST=sa
+          # - DB_PORT=sa
+          # - DB_DATABASE=sasaas
+          # - DB_USERNAME=sasaas
+          # - DB_PASSWORD=saasas
     volumes:
       - type: bind
         source: ./
@@ -13,6 +30,8 @@ services:
       - "8881:3000"
       - "8888:8000"
       - "8883:80"
+    depends_on:
+      - sqldata
   sqldata:
     image: mcr.microsoft.com/mssql/server:2017-latest
     environment:
